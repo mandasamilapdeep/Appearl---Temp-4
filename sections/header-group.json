@@ -11,6 +11,39 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "announcement_bar_2_P4pjfT": {
+      "type": "announcement-bar-2",
+      "blocks": {
+        "announcement_XkBzcg": {
+          "type": "announcement",
+          "settings": {
+            "text": "SUPER SALE UP TO 40% OFF <a href=\"/collections/all\" title=\"All products\">SHOP NOW</a>"
+          }
+        },
+        "counter_mMGknE": {
+          "type": "counter",
+          "settings": {
+            "year": 2026,
+            "month": 6,
+            "day": 22,
+            "days_label": "DAY",
+            "hours_label": "HRS",
+            "minutes_label": "MIN",
+            "seconds_label": "SEC"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_XkBzcg",
+        "counter_mMGknE"
+      ],
+      "name": "Announcement Bar 2",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -25,6 +58,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -52,31 +86,6 @@
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "announcement_bar_2_P4pjfT": {
-      "type": "announcement-bar-2",
-      "blocks": {
-        "announcement_XkBzcg": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_XkBzcg"
-      ],
-      "name": "Announcement Bar 2",
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
       }
     }
   },
