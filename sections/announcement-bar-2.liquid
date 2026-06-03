@@ -1,0 +1,155 @@
+{{ 'component-announcement-bar-2.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  #announcement_{{ section.id }} .announcement-bar-2__announcement {
+    color: rgb(var(--color-foreground));
+  }
+  #announcement_{{ section.id }} .announcement-bar-2__announcement a {
+  color: rgb(var(--color-foreground));
+  }
+   #announcement_{{ section.id }} .announcement-bar-2__counter {
+    color: rgb(var(--color-foreground));
+  }
+  .announcement-bar-2__content.multiple-blocks {
+        justify-content: space-between;
+        gap: 15px;
+    }
+#announcement_{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+{% endstyle %}
+
+{%- liquid
+  if section.blocks.size > 1
+    assign announcement_bar = true
+  endif
+-%}
+<div id="announcement_{{ section.id }}" class="announcement-bar-2 color-{{ section.settings.color_scheme }} {% if section.settings.show_line_separator %}with-separator{% endif %}">
+  <div class="announcement-bar-2__inner page-width">
+    <div class="announcement-bar-2__content {% if announcement_bar %}multiple-blocks {% endif %}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'announcement' %}
+            <div class="announcement-bar-2__announcement">
+              {{ block.settings.text }}
+            </div>
+          {% when 'counter' %}
+            <div class="announcement-bar-2__counter">
+                {% render 'counter', year: block.settings.year, month: block.settings.month, day: block.settings.day, id: block.id, days_label: block.settings.days_label, hours_label: block.settings.hours_label, minutes_label: block.settings.minutes_label, seconds_label: block.settings.seconds_label %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+      </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.announcement-bar-2.name",
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [ 
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar-2.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "t:sections.announcement-bar-2.blocks.announcement.settings.text.default",
+          "label": "t:sections.announcement-bar-2.blocks.announcement.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "counter",
+      "name": "t:sections.announcement-bar-2.blocks.counter.name",
+      "settings": [
+        {
+          "type": "number",
+          "id": "year",
+          "default": 2026,
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.year.label"
+        },
+        {
+          "type": "number",
+          "id": "month",
+          "default": 6,
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.month.label"
+        },
+        {
+          "type": "number",
+          "id": "day",
+          "default": 22,
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.day.label"
+        },
+        {
+          "type": "text",
+          "id": "days_label",
+          "default": "Days",
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.days_label.label"
+        },
+        {
+          "type": "text",
+          "id": "hours_label",
+          "default": "Hours",
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.hours_label.label"
+        },
+        {
+          "type": "text",
+          "id": "minutes_label",
+          "default": "Minutes",
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.minutes_label.label"
+        },
+        {
+          "type": "text",
+          "id": "seconds_label",
+          "default": "Seconds",
+          "label": "t:sections.announcement-bar-2.blocks.counter.settings.seconds_label.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar-2.presets.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

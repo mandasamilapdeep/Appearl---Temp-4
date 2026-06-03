@@ -1,0 +1,11 @@
+.announcement-bar-2__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.announcement-bar-2__content .announcement-bar-2__announcement * {
+    padding: 1rem 0;
+    margin: 0;
+    letter-spacing: 0.1rem;
+    min-height: 3.8rem;
+}
