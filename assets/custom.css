@@ -80,4 +80,17 @@
     height: 2.5rem;
     width: 2.5rem;
 }
+li.menu-drawer__item--image_box.list-menu__item ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    overflow-x: scroll;
+}
+li.menu-drawer__item--image_box.list-menu__item ul li {
+    min-width: 280px;
+}
+li.menu-drawer__item--image_box.list-menu__item {
+    padding: 11px 30px;
+}
 /*** Header 2  end***/
