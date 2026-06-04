@@ -15,6 +15,7 @@
         gap: 15px;
     }
 #announcement_{{ section.id }} {
+    font-size: {{ section.settings.announcement_font_size }}px;
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
 }
@@ -56,6 +57,16 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-4"
+    },
+    {
+      "type": "range",
+      "id": "announcement_font_size",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement font size",
+      "default": 16
     },
     {
       "type": "range",

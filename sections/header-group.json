@@ -24,7 +24,7 @@
           "type": "counter",
           "settings": {
             "year": 2026,
-            "month": 6,
+            "month": 8,
             "day": 22,
             "days_label": "DAY",
             "hours_label": "HRS",
@@ -39,9 +39,10 @@
       ],
       "name": "Announcement Bar 2",
       "settings": {
-        "color_scheme": "",
-        "padding_top": 8,
-        "padding_bottom": 8
+        "color_scheme": "scheme-3",
+        "announcement_font_size": 12,
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "announcement-bar": {
@@ -70,22 +71,57 @@
       }
     },
     "header": {
-      "type": "header",
+      "type": "header-2",
+      "blocks": {
+        "image_with_link_bFyMwK": {
+          "type": "image_with_link",
+          "settings": {
+            "menu_item_title": "WOMEN",
+            "image": "shopify://shop_images/mega-menu-image-le-dalia.webp",
+            "first_title": "LÉO & VIOLETTE X WENDY SWAN",
+            "second_title": "THE DALIA",
+            "link": "shopify://collections/maxis"
+          }
+        },
+        "image_with_link_tJwEwP": {
+          "type": "image_with_link",
+          "settings": {
+            "menu_item_title": "WOMEN",
+            "image": "shopify://shop_images/mega-menu-image-color.webp",
+            "first_title": "THE SYMBOL OF OUR VALUES",
+            "second_title": "ALMOND GREEN",
+            "link": "shopify://collections/maxis"
+          }
+        },
+        "image_with_link_XkBA8N": {
+          "type": "image_with_link",
+          "settings": {
+            "menu_item_title": "MEN",
+            "image": "shopify://shop_images/mega-menu-image-nouveau-cartable.webp",
+            "first_title": "First Title",
+            "second_title": "Second Title",
+            "link": "shopify://collections/maxis"
+          }
+        }
+      },
+      "block_order": [
+        "image_with_link_bFyMwK",
+        "image_with_link_tJwEwP",
+        "image_with_link_XkBA8N"
+      ],
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "middle-center",
         "mobile_logo_position": "center",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
+        "menu": "appearl-temp-4-mega-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "always",
+        "show_line_separator": false,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "margin_bottom": 0
       }
     }
   },

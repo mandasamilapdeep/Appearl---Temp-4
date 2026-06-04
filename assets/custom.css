@@ -1,3 +1,4 @@
+/*** Announcement Bar 2  start***/
 .announcement-bar-2__content {
     display: flex;
     align-items: center;
@@ -9,3 +10,74 @@
     letter-spacing: 0.1rem;
     min-height: 3.8rem;
 }
+/*** Announcement Bar 2  end***/
+/*** Header 2  start***/
+.section-header-2 .header__heading-link {
+    padding: 20px;
+}
+.section-header-2 details[open] > .header__menu-item {
+    text-decoration: none;
+}
+.section-header-2 .header__menu-item:hover span {
+    text-decoration: none;
+}
+.section-header-2 .header__inline-menu .list-menu__item {
+    position: relative;
+    padding: 0 !important;
+}
+.section-header-2 .header__inline-menu .list-menu__item::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #000;
+    transition: .5s ease-out;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.section-header-2 .header__inline-menu .list-menu--inline {
+    gap: 40px;
+}
+
+
+.section-header-2 .header__inline-menu .list-menu__item:hover::after, 
+.section-header-2 .header__inline-menu .list-menu__item.header__menu-item--active::after,
+.section-header-2 .header__inline-menu .mega-menu[open] .list-menu__item::after {
+  width: 100%;
+}
+.section-header-2 span.header__active-menu-item {
+    text-decoration: none;
+}
+.mega-menu__item--image img {
+    width: 100%;
+    height: auto;
+}
+.mega-menu__item--image a {
+    text-decoration: none;
+    color: currentColor;
+}
+.mega-menu__item--image {
+    text-align: center;
+}
+.mega-menu__item--image p {
+    margin: 0;
+    font-size: 14px;
+}
+.mega-menu__item--image .mega_menu_first_title {
+    font-weight: 600;
+}
+.section-header-2 .mega-menu__list {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section-header-2 .mega-menu__list>li {
+    width: calc(16.666% - 34px);
+}
+.section-header-2 .header__icon .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+/*** Header 2  end***/
