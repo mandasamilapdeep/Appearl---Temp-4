@@ -12,22 +12,47 @@
     "slider_mMUX43": {
       "type": "slider",
       "blocks": {
+        "slide_kDz9qn": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {}
+        },
+        "slide_9WK79N": {
+          "type": "slide",
+          "settings": {
+            "video_desk": "shopify://files/videos/a9ea64c362124ba0b6ffc37ea30bc5c8.HD-1080p-4.8Mbps-13664080 (1).mp4",
+            "video_mob": "shopify://files/videos/da1173adbe5d4b43b20b85045ab57b9a.HD-1080p-2.5Mbps-13664221.mp4"
+          }
+        },
         "slide_AXmkyE": {
           "type": "slide",
-          "settings": {}
+          "settings": {
+            "image_desk": "shopify://shop_images/banner_3_1.webp",
+            "image_mob": "shopify://shop_images/MEGGIE-MAXI-DRESS-IN-NOIR-BOSKEMPER-29233194.webp"
+          }
         },
         "slide_M4MjgA": {
           "type": "slide",
-          "settings": {}
+          "settings": {
+            "image_desk": "shopify://shop_images/image_14794c7d-0daa-4d47-8c48-4012980a0358.png",
+            "image_mob": "shopify://shop_images/DSC_8247.jpg"
+          }
         }
       },
       "block_order": [
+        "slide_kDz9qn",
+        "slide_9WK79N",
         "slide_AXmkyE",
         "slide_M4MjgA"
       ],
       "name": "Slider",
       "settings": {
-        "title": "Slider"
+        "title": "Slider",
+        "show_dots": true,
+        "enable_autoplay": true,
+        "autoplay_speed": 5,
+        "slide_height_desktop": "80vh",
+        "slide_height_mobile": "80vh"
       }
     },
     "image_banner": {
@@ -56,6 +81,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -71,6 +97,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "all",
         "products_to_show": 8,
@@ -96,11 +123,84 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "slideshow_ixyChi": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_LCGxxB": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_W8cKAG": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_LCGxxB",
+        "slide_W8cKAG"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "video_p4bq9Y": {
+      "type": "video",
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "Video",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "slider_mMUX43",
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "slideshow_ixyChi",
+    "video_p4bq9Y"
   ]
 }

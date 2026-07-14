@@ -1,132 +1,208 @@
-<section>
+{% style %}
+  #slider_wrapper_{{ section.id }} {
+      height: {{ section.settings.slide_height_desktop }};
+  }
+
+  @media(max-width: 768px) {
+      #slider_wrapper_{{ section.id }} {
+        height: {{ section.settings.slide_height_mobile }};
+      }
+  }
+{% endstyle %}
+
+<div id="slider_wrapper_{{ section.id }}" class="slider_section_wrapper ">
   <div class="swiper animeslide slider_main animeslide-{{ section.id }}">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div
-        class="swiper-slide animeslide-slide"
-        style="background-image: url(https://i.postimg.cc/hvWNG7wV/ruoa-bg-slide.png);"
-      >
-        <div class="container">
-          <h2 data-animate="bottom" class="animeslide-heading">
-            Why do we use it <br>
-            <span>Lorem Ipsum is simply dummy text</span>
-          </h2>
+      {% for block in section.blocks %}
+        <div
+          class="swiper-slide animeslide-slide"
+        >
+          <div class="slide_inner_content">
+            {%- liquid
+              assign sizes = '100vw'
+              assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+            -%}
 
-          <p data-animate="bottom" class="animeslide-desc">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s.
-          </p>
+            <div class="slider_image_box {% if block.settings.video_mob != blank %} mobile_video_true {% endif %} {% if block.settings.image_mob != blank %} mobile_image_true {% endif %}">
+              {% if block.settings.video_desk != blank %}
+                {{
+                  block.settings.video_desk
+                  | video_tag: autoplay: true, loop: true, controls: true, muted: true, class: 'desktop_video'
+                }}
+                {% if block.settings.video_mob != blank %}
+                  {{
+                    block.settings.video_mob
+                    | video_tag: autoplay: true, loop: true, controls: true, muted: true, class: 'mobile_video'
+                  }}
+                {% endif %}
+              {% else %}
+                {% if block.settings.image_desk != blank %}
+                  {%- liquid
+                    assign height = block.settings.image_desk.width | divided_by: block.settings.image_desk.aspect_ratio | round
+                  -%}
+                  {{
+                    block.settings.image_desk
+                    | image_url: width: 3840
+                    | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'desktop_image'
+                  }}
+
+                  {% if block.settings.image_mob != blank %}
+                    {%- liquid
+                      assign height = block.settings.image_mob.width | divided_by: block.settings.image_mob.aspect_ratio | round
+                    -%}
+                    {{
+                      block.settings.image_mob
+                      | image_url: width: 3840
+                      | image_tag: loading: 'lazy', height: height, sizes: sizes, widths: widths, class: 'mobile_image'
+                    }}
+                  {% endif %}
+                {% else %}
+                  {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              {% endif %}
+            </div>
+
+            <div class="container">
+              <h2 data-animate="bottom" class="animeslide-heading">
+                Why do we use it <br>
+                <span>Lorem Ipsum is simply dummy text</span>
+              </h2>
+
+              <p data-animate="bottom" class="animeslide-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div
-        class="swiper-slide animeslide-slide"
-        style="background-image: url(https://i.postimg.cc/ZRy1ZLfT/home.png);"
-      >
-        <div class="container">
-          <h2 data-animate="bottom" class="animeslide-heading">
-            Lorem Ipsum is simply <br>
-            <span>dummy text of the printing</span>
-          </h2>
-
-          <p data-animate="bottom" class="animeslide-desc">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="swiper-slide animeslide-slide"
-        style="background-image: url(https://i.postimg.cc/q7qPDry6/bg-docs.png);"
-      >
-        <div class="container">
-          <h2 data-animate="bottom" class="animeslide-heading">
-            Lorem Ipsum is<br>
-            <span>Lorem Ipsum has</span>
-          </h2>
-
-          <p data-animate="bottom" class="animeslide-desc">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="swiper-slide animeslide-slide"
-        style="background-image: url(https://i.postimg.cc/cJzVVzB9/accreditaion.png);"
-      >
-        <div class="container">
-          <h2 data-animate="bottom" class="animeslide-heading">
-            Where can I get some? <br>
-            <span>There are many variations</span>
-          </h2>
-
-          <p data-animate="bottom" class="animeslide-desc">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          </p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
 
-    <div class="flex animeslide-bottom">
-      <div class="cell small">
-        {% if section.settings.show_dots %}
-          <div class="animeslide-pagination swiper-pagination animeslide-pagination-{{ section.id }}"></div>
-        {% endif %}
-      </div>
+    {% if section.blocks.size > 1 %}
+      <div class="flex animeslide-bottom">
+        <div class="cell small">
+          {% if section.settings.show_dots %}
+            <div class="animeslide-pagination swiper-pagination animeslide-pagination-{{ section.id }}"></div>
+          {% endif %}
+        </div>
 
-      <div class="cell medium">
-        <div class="animeslide-scrollbar swiper-scrollbar"></div>
-      </div>
+        <div class="cell medium">
+          <div class="animeslide-scrollbar swiper-scrollbar"></div>
+        </div>
 
-      <div class="cell small">
-        <div class="animeslide-button-prev swiper-button-prev"></div>
-        <div class="animeslide-button-next swiper-button-next"></div>
+        <div class="cell small">
+          <div class="animeslide-button-prev swiper-button-prev"></div>
+          <div class="animeslide-button-next swiper-button-next"></div>
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
-</section>
+</div>
+
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const swiperQuiz{{ section.id | replace: '-', '_' }} = new Swiper('.animeslide-{{ section.id }}', {
+      effect: 'fade',
+      loop: true,
+      speed: 900,
+      centeredSlides: true,
+
+      {% if section.settings.show_dots %}
+      pagination: {
+        el: '.animeslide-pagination-{{ section.id }}',
+        clickable: true,
+      },
+      {% endif %}
+
+      navigation: {
+        nextEl: '.animeslide-button-next',
+        prevEl: '.animeslide-button-prev',
+      },
+
+      scrollbar: {
+        el: '.animeslide-scrollbar',
+        draggable: true,
+      },
+
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+      },
+
+      {% if section.settings.enable_autoplay %}
+      autoplay: {
+        delay: {{ section.settings.autoplay_speed }},
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      {% endif %}
+
+      runCallbacksOnInit: true,
+    });
+    });
+  </script>
+{% endcomment %}
 
 <script>
-  const swiperQuiz{{ section.id | replace: '-', '_' }} = new Swiper('.animeslide-{{ section.id }}', {
-    effect: 'fade',
-    loop: true,
-    speed: 900,
-    centeredSlides: true,
+  (function () {
 
-    {% if section.settings.show_dots %}
-    pagination: {
-      el: '.animeslide-pagination-{{ section.id }}',
-      clickable: true,
-    },
-    {% endif %}
+    function initSwiper{{ section.id | replace: '-', '_' }}() {
 
-    navigation: {
-      nextEl: '.animeslide-button-next',
-      prevEl: '.animeslide-button-prev',
-    },
+      const slider = document.querySelector('.animeslide-{{ section.id }}');
+      if (!slider) return;
 
-    scrollbar: {
-      el: '.animeslide-scrollbar',
-      draggable: true,
-    },
+      // Prevent duplicate initialization
+      if (slider.swiper) {
+        slider.swiper.destroy(true, true);
+      }
 
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false,
-    },
+      new Swiper(slider, {
+        effect: 'fade',
+        loop: false,
+        speed: 900,
+        centeredSlides: true,
 
-    {% if section.settings.enable_autoplay %}
-    autoplay: {
-      delay: {{ section.settings.autoplay_speed }},
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    {% endif %}
+        {% if section.settings.show_dots %}
+        pagination: {
+          el: '.animeslide-pagination-{{ section.id }}',
+          clickable: true,
+        },
+        {% endif %}
 
-    runCallbacksOnInit: true,
-  });
+        navigation: {
+          nextEl: '.animeslide-button-next',
+          prevEl: '.animeslide-button-prev',
+        },
+
+        scrollbar: {
+          el: '.animeslide-scrollbar',
+          draggable: true,
+        },
+
+        keyboard: {
+          enabled: true,
+          onlyInViewport: false,
+        },
+
+        {% if section.settings.enable_autoplay %}
+        autoplay: {
+          delay: {{ section.settings.autoplay_speed }}000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        {% endif %}
+
+        runCallbacksOnInit: true,
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', initSwiper{{ section.id | replace: '-', '_' }});
+    document.addEventListener('shopify:section:load', initSwiper{{ section.id | replace: '-', '_' }});
+
+  })();
 </script>
 
 {% schema %}
@@ -155,11 +231,59 @@
       "type": "range",
       "id": "autoplay_speed",
       "label": "Autoplay Speed",
-      "min": 1000,
-      "max": 9000,
-      "step": 500,
-      "unit": "ms",
-      "default": 5000
+      "min": 1,
+      "max": 9,
+      "step": 1,
+      "unit": "sec",
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "slide_height_desktop",
+      "options": [
+        {
+          "value": "40vh",
+          "label": "Small"
+        },
+        {
+          "value": "60vh",
+          "label": "Medium"
+        },
+        {
+          "value": "80vh",
+          "label": "Large"
+        },
+        {
+          "value": "100vh",
+          "label": "Full Screen"
+        }
+      ],
+      "default": "60vh",
+      "label": "Height desktop"
+    },
+    {
+      "type": "select",
+      "id": "slide_height_mobile",
+      "options": [
+        {
+          "value": "40vh",
+          "label": "Small"
+        },
+        {
+          "value": "60vh",
+          "label": "Medium"
+        },
+        {
+          "value": "80vh",
+          "label": "Large"
+        },
+        {
+          "value": "100vh",
+          "label": "Full Screen"
+        }
+      ],
+      "default": "60vh",
+      "label": "Height mobile"
     }
   ],
   "max_blocks": 5,
@@ -170,8 +294,24 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image",
-          "label": "Image"
+          "id": "image_desk",
+          "label": "Image desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Image mobile"
+        },
+        {
+          "type": "video",
+          "id": "video_desk",
+          "label": "Video desktop"
+        },
+
+        {
+          "type": "video",
+          "id": "video_mob",
+          "label": "Video mobile"
         }
       ]
     }
