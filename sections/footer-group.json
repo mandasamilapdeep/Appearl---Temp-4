@@ -11,12 +11,94 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "footer_2_jDUH9k": {
+      "type": "footer-2",
+      "blocks": {
+        "newsletter_RR9by7": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Newsletter",
+            "subtext": "<p>Subscribe to receive updates, access to exclusive deals, and more.</p>",
+            "show_social": true
+          }
+        },
+        "link_list_8A3XNq": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SHOP",
+            "menu": "footer"
+          }
+        },
+        "link_list_Deakaw": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SHOP",
+            "menu": "footer"
+          }
+        },
+        "text_xKVrLf": {
+          "type": "text",
+          "settings": {
+            "heading": "About the shop",
+            "subtext": "<p>The story of Leo and Violette, it's ours. We are Léo Dominguez & Violette Polchi. Two Parisian lovers sharing our lives for more than 8 years. Since the early days of our meeting, we always had the dream to develop a project together. Here it is!<br/>Thanks to <a href=\"https://www.leoetviolette.com/\" target=\"_blank\" title=\"https://www.leoetviolette.com/\">Léo et Violette</a> for allowing us to use their products in this demo store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_RR9by7",
+        "link_list_8A3XNq",
+        "link_list_Deakaw",
+        "text_xKVrLf"
+      ],
+      "name": "Footer 2",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 80,
+        "padding_bottom": 28
+      }
+    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_n3h6fW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "link_list_HHcJYf": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "text_NCdCJV": {
+          "type": "text",
+          "settings": {
+            "heading": "Heading",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_n3h6fW",
+        "link_list_HHcJYf",
+        "text_NCdCJV"
+      ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "NEWSLETTER",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
@@ -30,6 +112,7 @@
     }
   },
   "order": [
+    "footer_2_jDUH9k",
     "footer"
   ]
 }

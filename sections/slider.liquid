@@ -1,0 +1,200 @@
+<section>
+  <div class="swiper animeslide slider_main animeslide-{{ section.id }}">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div
+        class="swiper-slide animeslide-slide"
+        style="background-image: url(https://i.postimg.cc/hvWNG7wV/ruoa-bg-slide.png);"
+      >
+        <div class="container">
+          <h2 data-animate="bottom" class="animeslide-heading">
+            Why do we use it <br>
+            <span>Lorem Ipsum is simply dummy text</span>
+          </h2>
+
+          <p data-animate="bottom" class="animeslide-desc">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide animeslide-slide"
+        style="background-image: url(https://i.postimg.cc/ZRy1ZLfT/home.png);"
+      >
+        <div class="container">
+          <h2 data-animate="bottom" class="animeslide-heading">
+            Lorem Ipsum is simply <br>
+            <span>dummy text of the printing</span>
+          </h2>
+
+          <p data-animate="bottom" class="animeslide-desc">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide animeslide-slide"
+        style="background-image: url(https://i.postimg.cc/q7qPDry6/bg-docs.png);"
+      >
+        <div class="container">
+          <h2 data-animate="bottom" class="animeslide-heading">
+            Lorem Ipsum is<br>
+            <span>Lorem Ipsum has</span>
+          </h2>
+
+          <p data-animate="bottom" class="animeslide-desc">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide animeslide-slide"
+        style="background-image: url(https://i.postimg.cc/cJzVVzB9/accreditaion.png);"
+      >
+        <div class="container">
+          <h2 data-animate="bottom" class="animeslide-heading">
+            Where can I get some? <br>
+            <span>There are many variations</span>
+          </h2>
+
+          <p data-animate="bottom" class="animeslide-desc">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex animeslide-bottom">
+      <div class="cell small">
+        {% if section.settings.show_dots %}
+          <div class="animeslide-pagination swiper-pagination animeslide-pagination-{{ section.id }}"></div>
+        {% endif %}
+      </div>
+
+      <div class="cell medium">
+        <div class="animeslide-scrollbar swiper-scrollbar"></div>
+      </div>
+
+      <div class="cell small">
+        <div class="animeslide-button-prev swiper-button-prev"></div>
+        <div class="animeslide-button-next swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const swiperQuiz{{ section.id | replace: '-', '_' }} = new Swiper('.animeslide-{{ section.id }}', {
+    effect: 'fade',
+    loop: true,
+    speed: 900,
+    centeredSlides: true,
+
+    {% if section.settings.show_dots %}
+    pagination: {
+      el: '.animeslide-pagination-{{ section.id }}',
+      clickable: true,
+    },
+    {% endif %}
+
+    navigation: {
+      nextEl: '.animeslide-button-next',
+      prevEl: '.animeslide-button-prev',
+    },
+
+    scrollbar: {
+      el: '.animeslide-scrollbar',
+      draggable: true,
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    },
+
+    {% if section.settings.enable_autoplay %}
+    autoplay: {
+      delay: {{ section.settings.autoplay_speed }},
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    {% endif %}
+
+    runCallbacksOnInit: true,
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Slideshow"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed",
+      "min": 1000,
+      "max": 9000,
+      "step": 500,
+      "unit": "ms",
+      "default": 5000
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider",
+      "settings": {
+        "title": "Slider"
+      },
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"],
+    "groups": ["footer"]
+  }
+}
+{% endschema %}
