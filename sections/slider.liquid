@@ -16,10 +16,54 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       {% for block in section.blocks %}
+        <style>
+          #slide_inner_content_{{ section.id }}_{{ block.id }}:after {
+            content: "";
+            position: absolute;
+            background-color: {{ block.settings.overlay_color }};
+            opacity: {{ block.settings.overlay_opacity }};
+            width: 100%;
+            height: 100%;
+          }
+
+          #slide_inner_content_{{ section.id }}_{{ block.id }} .container {
+            max-width: {{ block.settings.slide_text_max_width }}px;
+
+
+            {% if block.settings.slide_text_border_color != blank %}
+            border: 1px solid {{ block.settings.slide_text_border_color }};
+             width: calc(100% - 30px);
+            {% else %}
+              width: 100%;
+            {% endif %}
+          }
+          .button_box_{{ section.id }}_{{ block.id }} .button_1 {
+            --initial-gradient: linear-gradient({{ block.settings.button_1_bg_color }}, {{ block.settings.button_1_bg_color }});
+            --hover-gradient: linear-gradient(transparent, transparent);
+            background-image: var(--initial-gradient), var(--hover-gradient);
+            color: {{ block.settings.button_1_text_color }};
+            border-color: {{ block.settings.button_1_border_color }};
+          }
+          .button_box_{{ section.id }}_{{ block.id }} .button_2 {
+            --initial-gradient: linear-gradient({{ block.settings.button_2_bg_color }}, {{ block.settings.button_2_bg_color }});
+            --hover-gradient: linear-gradient(transparent, transparent);
+            background-image: var(--initial-gradient), var(--hover-gradient);
+            color: {{ block.settings.button_2_text_color }};
+            border-color: {{ block.settings.button_2_border_color }};
+          }
+          .button_box_{{ section.id }}_{{ block.id }} .button_1:hover {
+            color: {{ block.settings.button_1_hover_text_color }};
+            border-color: {{ block.settings.button_1_hover_border_color }};
+          }
+          .button_box_{{ section.id }}_{{ block.id }} .button_2:hover {
+            color: {{ block.settings.button_2_hover_text_color }};
+            border-color: {{ block.settings.button_2_hover_border_color }};
+          }
+        </style>
         <div
           class="swiper-slide animeslide-slide"
         >
-          <div class="slide_inner_content">
+          <div id="slide_inner_content_{{ section.id }}_{{ block.id }}" class="slide_inner_content">
             {%- liquid
               assign sizes = '100vw'
               assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
@@ -29,12 +73,12 @@
               {% if block.settings.video_desk != blank %}
                 {{
                   block.settings.video_desk
-                  | video_tag: autoplay: true, loop: true, controls: true, muted: true, class: 'desktop_video'
+                  | video_tag: autoplay: true, loop: true, controls: false, muted: true, class: 'desktop_video'
                 }}
                 {% if block.settings.video_mob != blank %}
                   {{
                     block.settings.video_mob
-                    | video_tag: autoplay: true, loop: true, controls: true, muted: true, class: 'mobile_video'
+                    | video_tag: autoplay: true, loop: true, controls: false, muted: true, class: 'mobile_video'
                   }}
                 {% endif %}
               {% else %}
@@ -64,16 +108,50 @@
               {% endif %}
             </div>
 
-            <div class="container">
-              <h2 data-animate="bottom" class="animeslide-heading">
-                Why do we use it <br>
-                <span>Lorem Ipsum is simply dummy text</span>
-              </h2>
+            <div class="container {{ block.settings.slide_text_position_desktop }}  {{ block.settings.slide_text_position_mobile }}">
+              <div class="container_inner {{ block.settings.slide_text_align }}">
+                {% if block.settings.subheading != blank %}
+                  <div
+                    style="color: {{ block.settings.sub_heading_color }};"
+                    data-animate="bottom"
+                    class="animeslide-desc rte"
+                  >
+                    {{ block.settings.subheading }}
+                  </div>
+                {% endif %}
 
-              <p data-animate="bottom" class="animeslide-desc">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s.
-              </p>
+                {% if block.settings.heading != blank %}
+                  <h2
+                    style="color: {{ block.settings.heading_color }};"
+                    data-animate="bottom"
+                    class="animeslide-heading {{ block.settings.heading_size }}"
+                  >
+                    {{ block.settings.heading }}
+                  </h2>
+                {% endif %}
+
+                <div
+                  data-animate="bottom"
+                  class="animeslide-desc button_box button_box_{{ section.id }}_{{ block.id }}"
+                >
+                  {% if block.settings.button_1_url != blank %}
+                    <a
+                      href="{{ block.settings.button_1_url }}"
+                      class="button  button_1 button_hover_effect"
+                    >
+                      {{ block.settings.button_1_text -}}
+                    </a>
+                  {% endif %}
+                  {% if block.settings.button_2_url != blank %}
+                    <a
+                      href="{{ block.settings.button_2_url }}"
+                      class="button  button_2 button_hover_effect"
+                    >
+                      {{ block.settings.button_2_text -}}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -81,70 +159,29 @@
     </div>
 
     {% if section.blocks.size > 1 %}
-      <div class="flex animeslide-bottom">
+      <div class="flex animeslide-bottom {% unless section.settings.show_scrollbar or section.settings.show_arrows %} small_width_scrollbar {% endunless %}">
         <div class="cell small">
           {% if section.settings.show_dots %}
             <div class="animeslide-pagination swiper-pagination animeslide-pagination-{{ section.id }}"></div>
           {% endif %}
         </div>
 
-        <div class="cell medium">
-          <div class="animeslide-scrollbar swiper-scrollbar"></div>
-        </div>
+        {% if section.settings.show_scrollbar %}
+          <div class="cell medium">
+            <div class="animeslide-scrollbar swiper-scrollbar"></div>
+          </div>
+        {% endif %}
 
-        <div class="cell small">
-          <div class="animeslide-button-prev swiper-button-prev"></div>
-          <div class="animeslide-button-next swiper-button-next"></div>
-        </div>
+        {% if section.settings.show_arrows %}
+          <div class="cell small">
+            <div class="animeslide-button-prev swiper-button-prev"></div>
+            <div class="animeslide-button-next swiper-button-next"></div>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </div>
 </div>
-
-{% comment %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const swiperQuiz{{ section.id | replace: '-', '_' }} = new Swiper('.animeslide-{{ section.id }}', {
-      effect: 'fade',
-      loop: true,
-      speed: 900,
-      centeredSlides: true,
-
-      {% if section.settings.show_dots %}
-      pagination: {
-        el: '.animeslide-pagination-{{ section.id }}',
-        clickable: true,
-      },
-      {% endif %}
-
-      navigation: {
-        nextEl: '.animeslide-button-next',
-        prevEl: '.animeslide-button-prev',
-      },
-
-      scrollbar: {
-        el: '.animeslide-scrollbar',
-        draggable: true,
-      },
-
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-      },
-
-      {% if section.settings.enable_autoplay %}
-      autoplay: {
-        delay: {{ section.settings.autoplay_speed }},
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      {% endif %}
-
-      runCallbacksOnInit: true,
-    });
-    });
-  </script>
-{% endcomment %}
 
 <script>
   (function () {
@@ -223,6 +260,18 @@
     },
     {
       "type": "checkbox",
+      "id": "show_scrollbar",
+      "label": "Show Scrollbar",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show Arrows",
+      "default": false
+    },
+    {
+      "type": "checkbox",
       "id": "enable_autoplay",
       "label": "Enable Autoplay",
       "default": false
@@ -293,6 +342,145 @@
       "type": "slide",
       "settings": [
         {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay Color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay Opacity",
+          "min": 0,
+          "max": 1,
+          "step": 0.1,
+          "unit": "pt",
+          "default": 0.5
+        },
+        {
+          "type": "range",
+          "id": "slide_text_max_width",
+          "label": "Slide text max width",
+          "min": 0,
+          "max": 1200,
+          "step": 20,
+          "unit": "px",
+          "default": 400
+        },
+        {
+          "type": "color",
+          "id": "slide_text_border_color",
+          "label": "Slide text border color"
+        },
+        {
+          "type": "select",
+          "id": "slide_text_position_desktop",
+          "options": [
+            {
+              "value": "top_left_d",
+              "label": "Top Left"
+            },
+            {
+              "value": "top_center_d",
+              "label": "Top Center"
+            },
+            {
+              "value": "top_right_d",
+              "label": "Top Right"
+            },
+            {
+              "value": "middle_left_d",
+              "label": "Middle Left"
+            },
+            {
+              "value": "middle_center_d",
+              "label": "Middle Center"
+            },
+            {
+              "value": "middle_right_d",
+              "label": "Middle Right"
+            },
+            {
+              "value": "bottom_left_d",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom_center_d",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "bottom_right_d",
+              "label": "Bottom Right"
+            }
+          ],
+          "default": "top_left_d",
+          "label": "Slide text position Desktop"
+        },
+        {
+          "type": "select",
+          "id": "slide_text_position_mobile",
+          "options": [
+            {
+              "value": "top_left_m",
+              "label": "Top Left"
+            },
+            {
+              "value": "top_center_m",
+              "label": "Top Center"
+            },
+            {
+              "value": "top_right_m",
+              "label": "Top Right"
+            },
+            {
+              "value": "middle_left_m",
+              "label": "Middle Left"
+            },
+            {
+              "value": "middle_center_m",
+              "label": "Middle Center"
+            },
+            {
+              "value": "middle_right_m",
+              "label": "Middle Right"
+            },
+            {
+              "value": "bottom_left_m",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom_center_m",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "bottom_right_m",
+              "label": "Bottom Right"
+            }
+          ],
+          "default": "top_left_m",
+          "label": "Slide text position Mobile"
+        },
+        {
+          "type": "select",
+          "id": "slide_text_align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Slide text align"
+        },
+        {
           "type": "image_picker",
           "id": "image_desk",
           "label": "Image desktop"
@@ -312,6 +500,160 @@
           "type": "video",
           "id": "video_mob",
           "label": "Video mobile"
+        },
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "subheading",
+          "default": "sub Heading",
+          "label": "Sub Heading"
+        },
+        {
+          "type": "color",
+          "id": "sub_heading_color",
+          "default": "#fff",
+          "label": "Sub Heading Color"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Heading",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "default": "#fff",
+          "label": "Heading Color"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Small"
+            },
+            {
+              "value": "h1",
+              "label": "Medium"
+            },
+            {
+              "value": "h0",
+              "label": "Large"
+            },
+            {
+              "value": "hxl",
+              "label": "Extra Large"
+            },
+            {
+              "value": "hxxl",
+              "label": "Super Extra Large"
+            }
+          ],
+          "default": "h1",
+          "label": "Heading Size"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_1_text",
+          "label": "Button 1 Text",
+          "default": "Button 1"
+        },
+        {
+          "type": "url",
+          "id": "button_1_url",
+          "label": "Button 1 URL"
+        },
+        {
+          "type": "color",
+          "id": "button_1_bg_color",
+          "label": "Button 1 Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_1_text_color",
+          "label": "Button 1 Text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "button_1_border_color",
+          "label": "Button 1 Border Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_1_hover_bg_color",
+          "label": "Button 1 Hover Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_1_hover_text_color",
+          "label": "Button 1 Hover Text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "button_1_hover_border_color",
+          "label": "Button 1 Hover Border Color",
+          "default": "#000"
+        },
+        {
+          "type": "text",
+          "id": "button_2_text",
+          "label": "Button 2 Text",
+          "default": "Button 2"
+        },
+        {
+          "type": "url",
+          "id": "button_2_url",
+          "label": "Button 2 URL"
+        },
+        {
+          "type": "color",
+          "id": "button_2_bg_color",
+          "label": "Button 2 Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_2_text_color",
+          "label": "Button 2 Text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "button_2_border_color",
+          "label": "Button 2 Border Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_2_hover_bg_color",
+          "label": "Button 2 Hover Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "button_2_hover_text_color",
+          "label": "Button 2 Hover Text Color",
+          "default": "#000"
+        },
+        {
+          "type": "color",
+          "id": "button_2_hover_border_color",
+          "label": "Button 2 Hover Border Color",
+          "default": "#000"
         }
       ]
     }
