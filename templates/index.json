@@ -163,7 +163,7 @@
         "show_scrollbar": false,
         "show_arrows": false,
         "enable_autoplay": true,
-        "autoplay_speed": 5,
+        "autoplay_speed": 3,
         "slide_height_desktop": "80vh",
         "slide_height_mobile": "80vh"
       }
@@ -469,6 +469,161 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collection_tabs_7UaVha": {
+      "type": "collection_tabs",
+      "blocks": {
+        "collection_WfCEWk": {
+          "type": "collection",
+          "settings": {
+            "collection": "keffiyeh-vests",
+            "tab_title": "WOMEN"
+          }
+        },
+        "collection_M7njAq": {
+          "type": "collection",
+          "settings": {
+            "collection": "shirts",
+            "tab_title": "MEN"
+          }
+        },
+        "collection_qJje7E": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "tab_title": "h"
+          }
+        }
+      },
+      "block_order": [
+        "collection_WfCEWk",
+        "collection_M7njAq",
+        "collection_qJje7E"
+      ],
+      "name": "Collection Tabs",
+      "settings": {
+        "products_to_show": 9,
+        "title": "",
+        "heading_size": "h2",
+        "description": "<p>OUR BEST SELLERS</p>",
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "slider_c9mRaF": {
+      "type": "slider",
+      "blocks": {
+        "slide_hxiy8q": {
+          "type": "slide",
+          "settings": {
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2,
+            "slide_text_max_width": 560,
+            "slide_text_border_color": "",
+            "slide_text_position_desktop": "bottom_left_d",
+            "slide_text_position_mobile": "middle_center_m",
+            "slide_text_align": "left",
+            "image_desk": "shopify://shop_images/Image_with_text_overlay_-_Desktop_-_home.webp",
+            "subheading": "NEW PRODUCT",
+            "sub_heading_color": "#ffffff",
+            "heading": "LE BACKPACK",
+            "heading_color": "#ffffff",
+            "heading_size": "h2",
+            "button_1_text": "SHOP",
+            "button_1_url": "#",
+            "button_1_bg_color": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_1_border_color": "#ffffff",
+            "button_1_hover_bg_color": "#ffffff",
+            "button_1_hover_text_color": "#ffffff",
+            "button_1_hover_border_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_url": "",
+            "button_2_bg_color": "#ffffff",
+            "button_2_text_color": "#000000",
+            "button_2_border_color": "#ffffff",
+            "button_2_hover_bg_color": "#ffffff",
+            "button_2_hover_text_color": "#000000",
+            "button_2_hover_border_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_hxiy8q"
+      ],
+      "name": "Slider",
+      "settings": {
+        "title": "Slider",
+        "show_dots": false,
+        "show_scrollbar": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "autoplay_speed": 3,
+        "slide_height_desktop": "60vh",
+        "slide_height_mobile": "80vh"
+      }
+    },
+    "collection_tabs_LNAkdC": {
+      "type": "collection_tabs",
+      "blocks": {
+        "collection_8cJzzN": {
+          "type": "collection",
+          "settings": {
+            "collection": "keffiyeh-vests",
+            "tab_title": "IDEAL FOR A WEEKEND OUTING"
+          }
+        },
+        "collection_VNVJik": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "tab_title": "h"
+          }
+        }
+      },
+      "block_order": [
+        "collection_8cJzzN",
+        "collection_VNVJik"
+      ],
+      "name": "Collection Tabs",
+      "settings": {
+        "products_to_show": 9,
+        "title": "",
+        "heading_size": "h2",
+        "description": "<p>LE WEEKEND BAG</p>",
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "plus_icon",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -477,6 +632,9 @@
     "image_banner",
     "featured_collection",
     "slideshow_ixyChi",
-    "video_p4bq9Y"
+    "video_p4bq9Y",
+    "collection_tabs_7UaVha",
+    "slider_c9mRaF",
+    "collection_tabs_LNAkdC"
   ]
 }

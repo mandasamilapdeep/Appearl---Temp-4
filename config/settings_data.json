@@ -11,13 +11,13 @@
   "current": {
     "logo": "shopify://shop_images/ea72b0a312922dca13f69c2e529e6abebde9ecc2.svg",
     "logo_width": 170,
-    "type_header_font": "instrument_sans_n6",
+    "type_header_font": "instrument_sans_n4",
     "heading_scale": 100,
     "type_body_font": "instrument_sans_n4",
     "body_scale": 90,
     "page_width": 1900,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
+    "spacing_grid_horizontal": 40,
     "spacing_grid_vertical": 8,
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "none",
@@ -102,7 +102,7 @@
     "drawer_shadow_horizontal_offset": 0,
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
+    "badge_position": "top left",
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
@@ -122,7 +122,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "notification",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
@@ -152,7 +152,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#efefef",
           "background_gradient": "",
           "text": "#121212",
           "button": "#121212",
