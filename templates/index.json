@@ -733,20 +733,73 @@
         "padding_bottom": 80
       }
     },
-    "video_LiTW7M": {
-      "type": "video",
-      "name": "t:sections.video.presets.name",
+    "video_section_rMxfQE": {
+      "type": "video_section",
+      "name": "Video section",
       "settings": {
-        "heading": "",
-        "heading_size": "h2",
+        "sub_heading": "MADE IN ITALY",
+        "heading": "FINEST HANDMADE",
+        "heading_size": "h1",
+        "video_size_desktop": "40%",
+        "video_size_mobile": "100%",
         "enable_video_looping": false,
         "video": "shopify://files/videos/686fc38c1584488793cb47f95193f422.HD-1080p-4.8Mbps-12729205.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/Video_poster_image_-_home.webp",
         "description": "",
         "full_width": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-2db1ecf6-9513-4dd0-a06e-62b52e9294b9",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 80
+      }
+    },
+    "image_banner_counter_hDMjdn": {
+      "type": "image_banner_counter",
+      "blocks": {
+        "heading_DcyjiJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_aNXpnR": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "buttons_mqKrJh": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DcyjiJ",
+        "text_aNXpnR",
+        "buttons_mqKrJh"
+      ],
+      "name": "Image Banner Counter",
+      "settings": {
+        "image": "shopify://shop_images/Countdown_-_Desktop.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
       }
     }
   },
@@ -763,6 +816,7 @@
     "marquee_pDFb4G",
     "marquee_ETXhMF",
     "collection_tabs_LNAkdC",
-    "video_LiTW7M"
+    "video_section_rMxfQE",
+    "image_banner_counter_hDMjdn"
   ]
 }

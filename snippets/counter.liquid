@@ -1,14 +1,14 @@
 <style>
-    .countdown {
+  .countdown {
     display: flex;
     text-align: center;
     line-height: 1;
     gap: 8px;
-}
-.countdown span.label {
+  }
+  .countdown span.label {
     display: block;
-}
-</style>    
+  }
+</style>
 <div class="frame" data-target="{{ year }}-{{ month }}-{{ day }}">
   <div class="countdown">
     <div class="block">
@@ -31,67 +31,60 @@
       <span class="label">{{ seconds_label }}</span>
     </div>
   </div>
-  
+
   <script>
-  ;(function () {
-    var script = document.currentScript;
-    var container = script ? script.closest('.frame') : document.querySelector('.frame');
-    if (!container) return;
+    (function () {
+      var script = document.currentScript;
+      var container = script ? script.closest('.frame') : document.querySelector('.frame');
+      if (!container) return;
 
-    // parse target date from data attribute
-    var targetStr = container.dataset.target;
-    var TARGET = new Date(targetStr).getTime();
+      // parse target date from data attribute
+      var targetStr = container.dataset.target;
+      var TARGET = new Date(targetStr).getTime();
 
-    var daysEl = container.querySelector('.value.days');
-    var hoursEl = container.querySelector('.value.hours');
-    var minutesEl = container.querySelector('.value.minutes');
-    var secondsEl = container.querySelector('.value.seconds');
+      var daysEl = container.querySelector('.value.days');
+      var hoursEl = container.querySelector('.value.hours');
+      var minutesEl = container.querySelector('.value.minutes');
+      var secondsEl = container.querySelector('.value.seconds');
 
-    function pad(n) {
-      return n.toString().padStart(2, '0');
-    }
+      function pad(n) {
+        return n.toString().padStart(2, '0');
+      }
 
-    function tick() {
-      var now = Date.now();
-      var diff = Math.max(0, TARGET - now);
+      function tick() {
+        var now = Date.now();
+        var diff = Math.max(0, TARGET - now);
 
-      var s = Math.floor(diff / 1000);
-      var d = Math.floor(s / 86400);
-      s -= d * 86400;
-      var h = Math.floor(s / 3600);
-      s -= h * 3600;
-      var m = Math.floor(s / 60);
-      s -= m * 60;
+        var s = Math.floor(diff / 1000);
+        var d = Math.floor(s / 86400);
+        s -= d * 86400;
+        var h = Math.floor(s / 3600);
+        s -= h * 3600;
+        var m = Math.floor(s / 60);
+        s -= m * 60;
 
-      if (daysEl) daysEl.textContent = pad(d);
-      if (hoursEl) hoursEl.textContent = pad(h);
-      if (minutesEl) minutesEl.textContent = pad(m);
-      if (secondsEl) secondsEl.textContent = pad(s);
-    }
+        if (daysEl) daysEl.textContent = pad(d);
+        if (hoursEl) hoursEl.textContent = pad(h);
+        if (minutesEl) minutesEl.textContent = pad(m);
+        if (secondsEl) secondsEl.textContent = pad(s);
+      }
 
-    tick();
-    setInterval(tick, 1000);
+      tick();
+      setInterval(tick, 1000);
 
-    // Scoped racing line glow animation (if present inside this frame)
-    var glow = container.querySelector('.glow');
-    if (glow && typeof glow.getTotalLength === 'function') {
-      var totalLength = glow.getTotalLength();
-      var trailLength = 90;
-      var gapLength = Math.max(0, totalLength - trailLength);
-      glow.style.strokeDasharray = trailLength + ' ' + gapLength;
-      glow.animate(
-        [
-          { strokeDashoffset: 0 },
-          { strokeDashoffset: -totalLength },
-        ],
-        {
+      // Scoped racing line glow animation (if present inside this frame)
+      var glow = container.querySelector('.glow');
+      if (glow && typeof glow.getTotalLength === 'function') {
+        var totalLength = glow.getTotalLength();
+        var trailLength = 90;
+        var gapLength = Math.max(0, totalLength - trailLength);
+        glow.style.strokeDasharray = trailLength + ' ' + gapLength;
+        glow.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -totalLength }], {
           duration: 6000,
           iterations: Infinity,
           easing: 'linear',
-        }
-      );
-    }
-  })();
+        });
+      }
+    })();
   </script>
-
 </div>

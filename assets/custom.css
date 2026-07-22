@@ -710,6 +710,31 @@ svg.icon-plus {
 
 /* video section end */
 
+/* image banner counter start */
+
+.subtitle {
+    color: rgba(var(--color-foreground));
+}
+
+.banner__content_with_counter.banner__content {
+    justify-content: space-around !important;
+    flex-wrap: wrap;
+}
+
+.banner__content_with_counter.banner__content .countdown span.value {
+    font-size: 34px;
+    min-width: 45px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.countdown span.separator {
+    display: flex;
+    align-items: center;
+}
+
+/* image banner counter end */
+
 
 @media(min-width: 769px) {
     .slider_section_wrapper .container.top_left_d {
@@ -772,6 +797,17 @@ svg.icon-plus {
 
     .footer_2 .footer__blocks-wrapper {
         justify-content: space-between;
+    }
+}
+
+@media(max-width: 1024px) {
+    .banner__content_with_counter .counter_box {
+        width: 100%;
+    }
+
+    .banner__content_with_counter .counter_box .countdown {
+        justify-content: center;
+        padding-bottom: 30px;
     }
 }
 
