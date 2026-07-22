@@ -158,7 +158,7 @@
                               style="--animation-order: {{ forloop.index }};"
                             {% endif %}
                           >
-                            {% render 'card-product',
+                            {% render 'collection-card-product',
                               card_product: product,
                               media_aspect_ratio: section.settings.image_ratio,
                               image_shape: section.settings.image_shape,
@@ -193,7 +193,7 @@
                             endcase
                           %}
                           {%- assign placeholder_image = 'product-apparel-' | append: ridx -%}
-                          {% render 'card-product',
+                          {% render 'collection-card-product',
                             show_vendor: section.settings.show_vendor,
                             media_aspect_ratio: section.settings.image_ratio,
                             image_shape: section.settings.image_shape,
@@ -270,13 +270,12 @@
                 </div>
               {%- endif -%}
             </slider-component>
-
-            {%- if section.settings.show_view_all and more_in_collection -%}
+            {%- if section.settings.show_view_all -%}
               <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
                 <a
-                  href="{{ section.settings.collection.url }}"
-                  class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
-                  aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
+                  href="{{ block.settings.collection.url }}"
+                  class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button button_hover_effect{% else %}button button--secondary {% endif %}"
+                  aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: block.settings.collection.title | escape }}"
                 >
                   {{ 'sections.featured_collection.view_all' | t }}
                 </a>
@@ -307,12 +306,9 @@
 
                   breakpoints: {
                     0: {
-                      slidesPerView: 1,
+                      slidesPerView: {{ section.settings.columns_mobile }},
                     },
                     768: {
-                      slidesPerView: 2,
-                    },
-                    960: {
                       slidesPerView: {{ section.settings.columns_desktop }},
                     },
                   },
@@ -443,7 +439,7 @@
     {
       "type": "checkbox",
       "id": "enable_desktop_slider",
-      "label": "Enable desktop slider",
+      "label": "Enable slider",
       "default": false
     },
     {
@@ -586,10 +582,6 @@
         {
           "value": "bulk",
           "label": "t:sections.main-collection-product-grid.settings.quick_add.options.option_3"
-        },
-        {
-          "value": "plus_icon",
-          "label": "Plus Icon"
         }
       ]
     },
@@ -612,12 +604,6 @@
           "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
         }
       ]
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": false,
-      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
     },
     {
       "type": "header",

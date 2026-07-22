@@ -165,7 +165,7 @@
         "enable_autoplay": true,
         "autoplay_speed": 3,
         "slide_height_desktop": "80vh",
-        "slide_height_mobile": "80vh"
+        "slide_height_mobile": "60vh"
       }
     },
     "slider_3pW7CB": {
@@ -486,19 +486,11 @@
             "collection": "shirts",
             "tab_title": "MEN"
           }
-        },
-        "collection_qJje7E": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "tab_title": "h"
-          }
         }
       },
       "block_order": [
         "collection_WfCEWk",
-        "collection_M7njAq",
-        "collection_qJje7E"
+        "collection_M7njAq"
       ],
       "name": "Collection Tabs",
       "settings": {
@@ -519,8 +511,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "columns_mobile": "1",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -575,7 +566,133 @@
         "enable_autoplay": false,
         "autoplay_speed": 3,
         "slide_height_desktop": "60vh",
-        "slide_height_mobile": "80vh"
+        "slide_height_mobile": "40vh"
+      }
+    },
+    "collage_blocks_wd9yaa": {
+      "type": "collage_blocks",
+      "blocks": {
+        "image_LtPW4C": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Media_grid_-_women_collection.webp",
+            "title": "WOMEN",
+            "title_color": "#ffffff",
+            "image_link": "#",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2
+          }
+        },
+        "image_KaQqxT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Media_grid_-_men_collection.webp",
+            "title": "MEN",
+            "title_color": "#ffffff",
+            "image_link": "#",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2
+          }
+        },
+        "image_BrfDWt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Media_grid_-_accessories.webp",
+            "title": "ACCESSORIES",
+            "title_color": "#ffffff",
+            "image_link": "#",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2
+          }
+        }
+      },
+      "block_order": [
+        "image_LtPW4C",
+        "image_KaQqxT",
+        "image_BrfDWt"
+      ],
+      "name": "Collage blocks",
+      "settings": {
+        "icon_image": "shopify://shop_images/bag-240px.webp",
+        "heading": "OUR AIM: OFFER ELEGANT, TIMELESS & FUNCTIONAL PRODUCTS",
+        "heading_size": "h2",
+        "heading_max_width": 450,
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "marquee_pDFb4G": {
+      "type": "marquee",
+      "blocks": {
+        "slide_PyLhQr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Scrolling_content_-_home_-_sac._-baguette.avif",
+            "text": "NEW: LE SAC BAGUETTE",
+            "text_color": "#978d8d",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PyLhQr"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "marquee_reverse": false,
+        "marquee_elemements_display_desktop": 2,
+        "marquee_elemements_display_mobile": 1,
+        "marquee_speed_desktop": 10,
+        "marquee_speed_mobile": 6.5,
+        "border_top_color": "#d5d5d5",
+        "border_bottom_color": "#d5d5d5",
+        "desktop_gap": 40,
+        "mobile_gap": 20,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "marquee_font_size_desktop": 60,
+        "marquee_font_size_mobile": 24,
+        "marquee_image_width_desktop": 100,
+        "marquee_image_width_mobile": 40
+      }
+    },
+    "marquee_ETXhMF": {
+      "type": "marquee",
+      "blocks": {
+        "slide_NBdnnN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Scrolling_content_-_home_-_new.avif",
+            "text": "SHOP NEW ARRIVALS",
+            "text_color": "#978d8d",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "slide_NBdnnN"
+      ],
+      "name": "Marquee",
+      "settings": {
+        "marquee_reverse": true,
+        "marquee_elemements_display_desktop": 2,
+        "marquee_elemements_display_mobile": 1,
+        "marquee_speed_desktop": 10,
+        "marquee_speed_mobile": 6.5,
+        "border_top_color": "",
+        "border_bottom_color": "#d5d5d5",
+        "desktop_gap": 40,
+        "mobile_gap": 20,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "marquee_font_size_desktop": 60,
+        "marquee_font_size_mobile": 24,
+        "marquee_image_width_desktop": 100,
+        "marquee_image_width_mobile": 40
       }
     },
     "collection_tabs_LNAkdC": {
@@ -587,18 +704,10 @@
             "collection": "keffiyeh-vests",
             "tab_title": "IDEAL FOR A WEEKEND OUTING"
           }
-        },
-        "collection_VNVJik": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "tab_title": "h"
-          }
         }
       },
       "block_order": [
-        "collection_8cJzzN",
-        "collection_VNVJik"
+        "collection_8cJzzN"
       ],
       "name": "Collection Tabs",
       "settings": {
@@ -618,11 +727,26 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "plus_icon",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "video_LiTW7M": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/686fc38c1584488793cb47f95193f422.HD-1080p-4.8Mbps-12729205.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
@@ -635,6 +759,10 @@
     "video_p4bq9Y",
     "collection_tabs_7UaVha",
     "slider_c9mRaF",
-    "collection_tabs_LNAkdC"
+    "collage_blocks_wd9yaa",
+    "marquee_pDFb4G",
+    "marquee_ETXhMF",
+    "collection_tabs_LNAkdC",
+    "video_LiTW7M"
   ]
 }
