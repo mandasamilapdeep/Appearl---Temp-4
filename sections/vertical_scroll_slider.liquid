@@ -1,0 +1,610 @@
+<style>
+  #{{  section.id }} .swiper-pagination .swiper-pagination-bullet {
+      background: rgba(var(--color-foreground));
+      margin: 0 8px;
+   }
+  .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px; 
+      {% if section.settings.bg_image != blank %}
+      background-image: url({{ section.settings.bg_image | image_url: width: 1600 }});
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      {% endif %}
+    }
+  .split-slider-container-{{ section.id }} {
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  .split-slider-container-{{ section.id }} .left-side {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .split-slider-container-{{ section.id }} .image-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 75%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .split-slider-container-{{ section.id }} .image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .split-slider-container-{{ section.id }} .right-side {
+    width: 50%;
+  }
+
+  .split-slider-container-{{ section.id }} .slide-text {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+  }
+
+  @media screen and (max-width: 767px) {
+    .split-slider-container-{{ section.id }} {
+      display: block;
+    }
+
+    .split-slider-container-{{ section.id }} .left-side {
+      width: 100%;
+      height: 60vh;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .split-slider-container-{{ section.id }} .right-side {
+      width: 100%;
+    }
+
+    .split-slider-container-{{ section.id }} .slide-text {
+      min-height: 80vh;
+      padding: 40px 25px;
+    }
+  }
+   @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+</style>
+
+
+<div id="{{  section.id }}" class="vertical_scroll_slider color-{{ section.settings.color_scheme }} gradient">
+<div class="section-{{ section.id }}-padding">   
+<div class="vertical_scroll_slider_desktop_inner">  
+<div class="page-width">
+
+  <div
+    class="split-slider-container-{{ section.id }} "
+    data-split-slider
+  >
+
+    <!-- LEFT SIDE -->
+    <div class="left-side">
+
+      {% for block in section.blocks %}
+
+        <div
+          class="image-wrapper"
+          data-slide-image
+          {{ block.shopify_attributes }}
+        >
+
+          {% if block.settings.image != blank %}           
+       
+            {{ 
+              block.settings.image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800, 1000, 1200, 1600',
+                sizes: '(min-width: 768px) 50vw, 100vw',
+                alt: block.settings.image.alt
+            }}
+
+          {% endif %}
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+ 
+
+    <!-- RIGHT SIDE -->
+    <div class="right-side">
+
+      {% for block in section.blocks %}
+
+        <div
+          class="slide-text rte {{ block.settings.desktop_content_alignment }}"
+          data-slide-text
+          {{ block.shopify_attributes }}
+        >
+        {% if block.settings.text != blank %}  
+        {{ block.settings.text }}
+        {% endif %}
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+  </div>
+  </div>
+ 
+
+
+
+
+<div class="mobile_vertical_slider">
+  <div class="page-width">
+    <div class="mobile_vertical_slider_inner">
+    <div class="swiper-container swiper-container-{{ section.id }}">
+  <div class="swiper-wrapper">
+
+    {% for block in section.blocks %}
+      <div class="swiper-slide" {{ block.shopify_attributes }}>
+        <div
+          class="image-wrapper_mobile"
+          data-slide-image
+          {{ block.shopify_attributes }}
+        >
+
+          {% if block.settings.image != blank %}           
+       
+            {{ 
+              block.settings.image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                widths: '400, 600, 800, 1000, 1200, 1600',
+                sizes: '(min-width: 768px) 50vw, 100vw',
+                alt: block.settings.image.alt
+            }}
+
+          {% endif %}
+
+        </div>
+        <div
+          class="slide-text_mobile rte {{ block.settings.desktop_content_alignment }}"
+          data-slide-text
+          {{ block.shopify_attributes }}
+        >
+        {% if block.settings.text != blank %}  
+        {{ block.settings.text }}
+        {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination swiper-pagination-{{ section.id }}"></div>
+
+  <!-- Navigation -->
+  <div class="swiper-button-next swiper-button-next-{{ section.id }}"></div>
+  <div class="swiper-button-prev swiper-button-prev-{{ section.id }}"></div>
+</div>
+  </div>
+ </div>
+ </div>
+</div>    
+</div>   
+<script>
+(function () {
+
+  /*
+   * Prevent duplicate initialization
+   */
+  function initVerticalScrollSlider(section) {
+
+    if (!section) {
+      return;
+    }
+
+    if (section.dataset.verticalSliderInitialized === 'true') {
+      return;
+    }
+
+    section.dataset.verticalSliderInitialized = 'true';
+
+
+    /*
+     * Get elements only from this section
+     */
+    const container = section.querySelector('[data-split-slider]');
+
+    if (!container) {
+      return;
+    }
+
+    const leftSide = container.querySelector('.left-side');
+
+    const textSections = gsap.utils.toArray(
+      container.querySelectorAll('[data-slide-text]')
+    );
+
+    const images = gsap.utils.toArray(
+      container.querySelectorAll('[data-slide-image]')
+    );
+
+
+    /*
+     * Match images with text blocks
+     */
+    const slideCount = Math.min(
+      textSections.length,
+      images.length
+    );
+
+
+    if (slideCount === 0) {
+      return;
+    }
+
+
+    /*
+     * Hide all images
+     */
+    gsap.set(images, {
+      autoAlpha: 0,
+      zIndex: 1
+    });
+
+
+    /*
+     * Show first image
+     */
+    gsap.set(images[0], {
+      autoAlpha: 1,
+      zIndex: 2
+    });
+
+
+    /*
+     * Pin left side
+     */
+    ScrollTrigger.create({
+
+      trigger: container,
+
+      start: 'top top',
+
+      end: 'bottom bottom',
+
+      pin: leftSide,
+
+      pinSpacing: false
+
+    });
+
+    for (let index = 0; index < slideCount; index++) {
+
+      ScrollTrigger.create({
+
+        trigger: textSections[index],
+
+        start: 'top 50%',
+
+        onEnter: function () {
+
+          showImage(index);
+
+        },
+
+        onEnterBack: function () {
+
+          showImage(index);
+
+        }
+
+      });
+
+    }
+
+    function showImage(index) {
+
+      if (!images[index]) {
+        return;
+      }
+
+      images.forEach(function (image, imageIndex) {
+
+        if (imageIndex === index) {
+
+          gsap.set(image, {
+            autoAlpha: 1,
+            zIndex: 2
+          });
+
+        } else {
+
+          gsap.set(image, {
+            autoAlpha: 0,
+            zIndex: 1
+          });
+
+        }
+
+      });
+
+    }
+
+    ScrollTrigger.create({
+
+      trigger: container,
+
+      start: 'top top',
+
+      onEnter: function () {
+
+        showImage(0);
+
+      },
+
+      onEnterBack: function () {
+
+        showImage(0);
+
+      }
+
+    });
+
+    ScrollTrigger.refresh();
+
+  }
+
+  function initCurrentSection() {
+
+    const section = document.getElementById(
+      'shopify-section-{{ section.id }}'
+    );
+
+    if (!section) {
+      return;
+    }
+
+    initVerticalScrollSlider(section);
+
+  }
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initCurrentSection
+    );
+
+  } else {
+
+    initCurrentSection();
+
+  }
+
+  document.addEventListener(
+    'shopify:section:load',
+    function (event) {
+
+      if (
+        event.detail.sectionId === '{{ section.id }}'
+      ) {
+
+        const section = document.getElementById(
+          'shopify-section-{{ section.id }}'
+        );
+
+        initVerticalScrollSlider(section);
+
+      }
+
+    }
+  );
+
+  document.addEventListener(
+    'shopify:section:unload',
+    function (event) {
+
+      if (
+        event.detail.sectionId !== '{{ section.id }}'
+      ) {
+        return;
+      }
+
+      const section = document.getElementById(
+        'shopify-section-{{ section.id }}'
+      );
+
+      if (!section) {
+        return;
+      }
+
+      ScrollTrigger.getAll().forEach(function (trigger) {
+
+        if (
+          trigger.trigger &&
+          section.contains(trigger.trigger)
+        ) {
+
+          trigger.kill();
+
+        }
+
+      });
+
+    }
+  );
+
+})();
+
+ document.addEventListener('DOMContentLoaded', function () {
+
+    var swiper = new Swiper('.swiper-container-{{ section.id }}', {
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 800,
+
+      pagination: {
+        el: '.swiper-pagination-{{ section.id }}',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next-{{ section.id }}',
+        prevEl: '.swiper-button-prev-{{ section.id }}',
+      }
+    });
+
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Vertical scroll slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "background image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+     {
+      "type": "header",
+      "content": "Mobile settings"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
+    }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vertical scroll slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

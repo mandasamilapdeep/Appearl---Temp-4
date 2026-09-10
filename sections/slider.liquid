@@ -28,10 +28,12 @@
 
           #slide_inner_content_{{ section.id }}_{{ block.id }} .container {
             max-width: {{ block.settings.slide_text_max_width }}px;
+            background-color: {{ block.settings.slide_text_bg_color }};
 
-
-            {% if block.settings.slide_text_border_color != blank %}
+            {% if block.settings.slide_text_border_color != blank or block.settings.slide_text_bg_color != blank %}
+            {% if block.settings.slide_text_border_color != blank %}  
             border: 1px solid {{ block.settings.slide_text_border_color }};
+            {% endif %}
              width: calc(100% - 30px);
             {% else %}
               width: 100%;
@@ -120,6 +122,16 @@
                   </div>
                 {% endif %}
 
+                {% if block.settings.text != blank %}
+                  <div
+                    style="color: {{ block.settings.text_color }};"
+                    data-animate="bottom"
+                    class="animeslide-desc rte slide_text"
+                  >
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+
                 {% if block.settings.heading != blank %}
                   <h2
                     style="color: {{ block.settings.heading_color }};"
@@ -129,7 +141,7 @@
                     {{ block.settings.heading }}
                   </h2>
                 {% endif %}
-
+                 {% if block.settings.button_1_url != blank or block.settings.button_2_url != blank %}
                 <div
                   data-animate="bottom"
                   class="animeslide-desc button_box button_box_{{ section.id }}_{{ block.id }}"
@@ -151,6 +163,7 @@
                     </a>
                   {% endif %}
                 </div>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -369,6 +382,11 @@
         },
         {
           "type": "color",
+          "id": "slide_text_bg_color",
+          "label": "Slide text Background color"
+        },
+        {
+          "type": "color",
           "id": "slide_text_border_color",
           "label": "Slide text border color"
         },
@@ -516,6 +534,17 @@
           "id": "sub_heading_color",
           "default": "#fff",
           "label": "Sub Heading Color"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default": "#fff",
+          "label": "Text Color"
         },
         {
           "type": "inline_richtext",

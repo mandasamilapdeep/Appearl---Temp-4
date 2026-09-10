@@ -24,8 +24,8 @@
           "type": "counter",
           "settings": {
             "year": 2026,
-            "month": 8,
-            "day": 22,
+            "month": 12,
+            "day": 29,
             "days_label": "DAY",
             "hours_label": "HRS",
             "minutes_label": "MIN",

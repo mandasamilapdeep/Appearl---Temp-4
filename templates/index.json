@@ -19,12 +19,15 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 400,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "top_left_d",
             "slide_text_position_mobile": "top_left_m",
             "slide_text_align": "left",
             "subheading": "sub Heading",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "Heading",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -52,6 +55,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 480,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "middle_center_d",
             "slide_text_position_mobile": "middle_center_m",
@@ -60,6 +64,8 @@
             "video_mob": "shopify://files/videos/da1173adbe5d4b43b20b85045ab57b9a.HD-1080p-2.5Mbps-13664221.mp4",
             "subheading": "NEW COLLECTION",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "BEAUTIES",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -86,7 +92,8 @@
           "settings": {
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
-            "slide_text_max_width": 560,
+            "slide_text_max_width": 660,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "middle_center_d",
             "slide_text_position_mobile": "middle_center_m",
@@ -94,6 +101,8 @@
             "image_desk": "shopify://shop_images/Slideshow_-_Desktop_-_home.webp",
             "subheading": "LE SAC BAGUETTE",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "INSPIRED BY THE 90S",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -103,8 +112,8 @@
             "button_1_text_color": "#000000",
             "button_1_border_color": "#ffffff",
             "button_1_hover_bg_color": "#ffffff",
-            "button_1_hover_text_color": "#000000",
-            "button_1_hover_border_color": "#000000",
+            "button_1_hover_text_color": "#ffffff",
+            "button_1_hover_border_color": "#ffffff",
             "button_2_text": "",
             "button_2_url": "",
             "button_2_bg_color": "#ffffff",
@@ -120,7 +129,8 @@
           "settings": {
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
-            "slide_text_max_width": 400,
+            "slide_text_max_width": 480,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "#ffffff",
             "slide_text_position_desktop": "middle_center_d",
             "slide_text_position_mobile": "middle_center_m",
@@ -128,6 +138,8 @@
             "image_desk": "shopify://shop_images/NOVA-LZDVERT2.webp",
             "subheading": "LE NOVA",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "ELEGANT & TIMELESS",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -137,8 +149,8 @@
             "button_1_text_color": "#000000",
             "button_1_border_color": "#ffffff",
             "button_1_hover_bg_color": "#ffffff",
-            "button_1_hover_text_color": "#000000",
-            "button_1_hover_border_color": "#000000",
+            "button_1_hover_text_color": "#ffffff",
+            "button_1_hover_border_color": "#ffffff",
             "button_2_text": "VIEW COLLECTIONS",
             "button_2_url": "",
             "button_2_bg_color": "#ffffff",
@@ -163,7 +175,7 @@
         "show_scrollbar": false,
         "show_arrows": false,
         "enable_autoplay": true,
-        "autoplay_speed": 3,
+        "autoplay_speed": 5,
         "slide_height_desktop": "80vh",
         "slide_height_mobile": "60vh"
       }
@@ -178,12 +190,15 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 400,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "top_left_d",
             "slide_text_position_mobile": "top_left_m",
             "slide_text_align": "left",
             "subheading": "sub Heading",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "Heading",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -211,6 +226,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 400,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "top_left_d",
             "slide_text_position_mobile": "top_left_m",
@@ -219,6 +235,8 @@
             "video_mob": "shopify://files/videos/da1173adbe5d4b43b20b85045ab57b9a.HD-1080p-2.5Mbps-13664221.mp4",
             "subheading": "sub Heading",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "Heading",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -246,6 +264,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 400,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "top_left_d",
             "slide_text_position_mobile": "top_left_m",
@@ -254,6 +273,8 @@
             "image_mob": "shopify://shop_images/MEGGIE-MAXI-DRESS-IN-NOIR-BOSKEMPER-29233194.webp",
             "subheading": "sub Heading",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "Heading",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -281,6 +302,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.5,
             "slide_text_max_width": 400,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "top_left_d",
             "slide_text_position_mobile": "top_left_m",
@@ -289,6 +311,8 @@
             "image_mob": "shopify://shop_images/DSC_8247.jpg",
             "subheading": "sub Heading",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "Heading",
             "heading_color": "#ffffff",
             "heading_size": "h1",
@@ -525,6 +549,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.2,
             "slide_text_max_width": 560,
+            "slide_text_bg_color": "",
             "slide_text_border_color": "",
             "slide_text_position_desktop": "bottom_left_d",
             "slide_text_position_mobile": "middle_center_m",
@@ -532,6 +557,8 @@
             "image_desk": "shopify://shop_images/Image_with_text_overlay_-_Desktop_-_home.webp",
             "subheading": "NEW PRODUCT",
             "sub_heading_color": "#ffffff",
+            "text": "",
+            "text_color": "#ffffff",
             "heading": "LE BACKPACK",
             "heading_color": "#ffffff",
             "heading_size": "h2",
@@ -616,7 +643,7 @@
         "icon_image": "shopify://shop_images/bag-240px.webp",
         "heading": "OUR AIM: OFFER ELEGANT, TIMELESS & FUNCTIONAL PRODUCTS",
         "heading_size": "h2",
-        "heading_max_width": 450,
+        "heading_max_width": 460,
         "desktop_layout": "left",
         "mobile_layout": "column",
         "card_styles": "product-card-wrapper",
@@ -719,7 +746,7 @@
         "columns_desktop": 4,
         "enable_desktop_slider": true,
         "full_width": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "color_scheme": "",
         "image_ratio": "square",
@@ -756,50 +783,321 @@
     "image_banner_counter_hDMjdn": {
       "type": "image_banner_counter",
       "blocks": {
-        "heading_DcyjiJ": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h1"
-          }
-        },
         "text_aNXpnR": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "LIMITED TIME ONLY",
+            "text_style": "subtitle"
+          }
+        },
+        "heading_DcyjiJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "SUPER SALE UP TO 40%",
+            "heading_size": "h1"
+          }
+        },
+        "text_agcpAM": {
+          "type": "text",
+          "settings": {
+            "text": "Shop our selection of exclusive handbags and backpacks at reduced price during the Super Sale. Hurry up!",
+            "text_style": "subtitle"
           }
         },
         "buttons_mqKrJh": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "#",
             "button_style_secondary_1": false,
-            "button_label_2": "Button label",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "heading_DcyjiJ",
         "text_aNXpnR",
+        "heading_DcyjiJ",
+        "text_agcpAM",
         "buttons_mqKrJh"
       ],
       "name": "Image Banner Counter",
       "settings": {
         "image": "shopify://shop_images/Countdown_-_Desktop.webp",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "show_text_box": false,
+        "color_scheme": "scheme-2db1ecf6-9513-4dd0-a06e-62b52e9294b9",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "show_text_below": true
+        "show_text_below": false,
+        "show_counter": true,
+        "year": 2026,
+        "month": 10,
+        "day": 22,
+        "days_label": "DAYS",
+        "hours_label": "HOURS",
+        "minutes_label": "MIN",
+        "seconds_label": "SEC"
+      }
+    },
+    "images_text_xi9iyC": {
+      "type": "images_text",
+      "name": "Images with text",
+      "settings": {
+        "sub_title": "COLLABORATION",
+        "title": "LÉO ET VIOLETTE X WENDY SWAN",
+        "text": "<p>Dalia was born from the encounter between Wendy and Léo et Violette. Wendy's minimalist and elegant universe corresponds perfectly to the spirit of Léo et Violette.</p>",
+        "button_text": "DISCOVER",
+        "button_link": "#",
+        "first_image": "shopify://shop_images/Multiple_media_with_text_-_Portrait_-_home_2.webp",
+        "second_image": "shopify://shop_images/Multiple_media_with_text_-_Portrait_-_home_1.webp",
+        "text_box_max_width": 410,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "before_after_ag8bUK": {
+      "type": "before_after",
+      "name": "Before after",
+      "settings": {
+        "sub_title": "LE DALIA",
+        "title": "CHOOSE YOUR COLOUR",
+        "before_image": "shopify://shop_images/Before_-_Desktop.webp",
+        "after_image": "shopify://shop_images/After_-_Desktop_a6b79a4e-dcad-4761-9811-c1386231ae01.webp",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "vertical_scroll_slider_ikFLUg": {
+      "type": "vertical_scroll_slider",
+      "blocks": {
+        "slide_BM7cpC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Images_with_text_scroll_-_Image_-_home_1.webp",
+            "text": "<p>#1</p><h3>THE DESIGN</h3><p>At Léo et Violette, we create our bags with you in mind. All our products are imagined and designed in Paris, in our offices on rue Sainte-Anne. Most of the time, an idea for a model comes from a need that you have expressed to us through the various feedbacks we collect throughout the year.</p><p><a href=\"#\" title=\"#\">Learn more</a></p>",
+            "desktop_content_alignment": "center"
+          }
+        },
+        "slide_rq7eqx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Images_with_text_scroll_-_Image_-_home_2_1.webp",
+            "text": "<p>#2</p><h3>OUR COMMITMENTS</h3><p>At Léo et Violette, from day one we have made responsibility part of our values. Towards you, and also towards the environment through the way we produce our collections. From design to distribution, we take the greatest care with our products, which reflect our values: timeless, quality, at the right price.</p><p><a href=\"#\" title=\"#\">Learn more</a></p>",
+            "desktop_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BM7cpC",
+        "slide_rq7eqx"
+      ],
+      "name": "Vertical scroll slider",
+      "settings": {
+        "bg_image": "shopify://shop_images/Images_with_text_scroll_-_Background_image_-_Desktop_-_home.webp",
+        "color_scheme": "scheme-5bd8b85a-5a4b-47cc-b560-e7c6b496a9d3",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36
+      }
+    },
+    "featured_blog_posts_pK9ika": {
+      "type": "featured_blog_posts",
+      "name": "Featured blog posts",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "sub_heading": "NEWS",
+        "heading": "FROM THE BLOG",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "view_all_text": "DISCOVER ALL OUR STORIES",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "slider_FXMAiV": {
+      "type": "slider",
+      "blocks": {
+        "slide_8zxmYX": {
+          "type": "slide",
+          "settings": {
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.2,
+            "slide_text_max_width": 420,
+            "slide_text_bg_color": "#ffffff",
+            "slide_text_border_color": "",
+            "slide_text_position_desktop": "middle_center_d",
+            "slide_text_position_mobile": "middle_center_m",
+            "slide_text_align": "center",
+            "image_desk": "shopify://shop_images/Image_with_text_overlay_-_Desktop_-_leather.webp",
+            "subheading": "MATERIALS",
+            "sub_heading_color": "#0e0e0e",
+            "text": "<p>We only work with the best leather, chosen in collaboration with our factory. Made in Italy.</p><p><a href=\"#\" title=\"#\">Learn more</a></p>",
+            "text_color": "#0e0e0e",
+            "heading": "",
+            "heading_color": "#0e0e0e",
+            "heading_size": "h2",
+            "button_1_text": "",
+            "button_1_url": "",
+            "button_1_bg_color": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_1_border_color": "#ffffff",
+            "button_1_hover_bg_color": "#ffffff",
+            "button_1_hover_text_color": "#ffffff",
+            "button_1_hover_border_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_url": "",
+            "button_2_bg_color": "#ffffff",
+            "button_2_text_color": "#000000",
+            "button_2_border_color": "#ffffff",
+            "button_2_hover_bg_color": "#ffffff",
+            "button_2_hover_text_color": "#000000",
+            "button_2_hover_border_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_8zxmYX"
+      ],
+      "name": "Slider",
+      "settings": {
+        "title": "Slider",
+        "show_dots": false,
+        "show_scrollbar": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "autoplay_speed": 3,
+        "slide_height_desktop": "60vh",
+        "slide_height_mobile": "60vh"
+      }
+    },
+    "feature_column_YyBAzW": {
+      "type": "feature_column",
+      "blocks": {
+        "column_jdJLkr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Multi-column_-_commitments_1.webp",
+            "title": "THE DESIGN",
+            "text": "<p>At Léo et Violette, we create our bags with you in mind. All our products are imagined and designed in Paris, in our offices on rue Sainte-Anne.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hGPArL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Multi-column_-_home_2.webp",
+            "title": "MATERIALS",
+            "text": "<p>Our leathers come exclusively from hides recovered from the food industry. We work exclusively with tanneries in Italy, France and Spain.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8gti7J": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Multi-column_-_home_3.webp",
+            "title": "THE KNOW-HOW",
+            "text": "<p>Each step of the manufacturing process is carried out according to the strict specifications of the leatherworker's craft.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_jdJLkr",
+        "column_hGPArL",
+        "column_8gti7J"
+      ],
+      "name": "Feature Column",
+      "settings": {
+        "sub_heading": "ABOUT US",
+        "title": "FROM A TO Z",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 80,
+        "padding_bottom": 60
+      }
+    },
+    "slider_qibmtp": {
+      "type": "slider",
+      "blocks": {
+        "slide_QfyBVa": {
+          "type": "slide",
+          "settings": {
+            "overlay_color": "#000000",
+            "overlay_opacity": 0.4,
+            "slide_text_max_width": 700,
+            "slide_text_bg_color": "",
+            "slide_text_border_color": "",
+            "slide_text_position_desktop": "middle_center_d",
+            "slide_text_position_mobile": "middle_center_m",
+            "slide_text_align": "center",
+            "image_desk": "shopify://shop_images/Image_with_text_block_-_Desktop_-_the_dino.webp",
+            "image_mob": "shopify://shop_images/Image_with_text_block_-_Mobile_-_the_dino.webp",
+            "subheading": "THE COUPLE",
+            "sub_heading_color": "#ffffff",
+            "text": "<h4>LÉO ET VIOLETTE</h4><p>We aspire to be a brand of the 21st century: 100% online and without any intermediary.<br/>From you to us directly.</p>",
+            "text_color": "#ffffff",
+            "heading": "",
+            "heading_color": "#0e0e0e",
+            "heading_size": "h2",
+            "button_1_text": "",
+            "button_1_url": "",
+            "button_1_bg_color": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_1_border_color": "#ffffff",
+            "button_1_hover_bg_color": "#ffffff",
+            "button_1_hover_text_color": "#ffffff",
+            "button_1_hover_border_color": "#ffffff",
+            "button_2_text": "",
+            "button_2_url": "",
+            "button_2_bg_color": "#ffffff",
+            "button_2_text_color": "#000000",
+            "button_2_border_color": "#ffffff",
+            "button_2_hover_bg_color": "#ffffff",
+            "button_2_hover_text_color": "#000000",
+            "button_2_hover_border_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QfyBVa"
+      ],
+      "name": "Slider",
+      "settings": {
+        "title": "Slider",
+        "show_dots": false,
+        "show_scrollbar": false,
+        "show_arrows": false,
+        "enable_autoplay": false,
+        "autoplay_speed": 3,
+        "slide_height_desktop": "60vh",
+        "slide_height_mobile": "60vh"
       }
     }
   },
@@ -817,6 +1115,13 @@
     "marquee_ETXhMF",
     "collection_tabs_LNAkdC",
     "video_section_rMxfQE",
-    "image_banner_counter_hDMjdn"
+    "image_banner_counter_hDMjdn",
+    "images_text_xi9iyC",
+    "before_after_ag8bUK",
+    "vertical_scroll_slider_ikFLUg",
+    "featured_blog_posts_pK9ika",
+    "slider_FXMAiV",
+    "feature_column_YyBAzW",
+    "slider_qibmtp"
   ]
 }
